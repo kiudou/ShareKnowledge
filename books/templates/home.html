@@ -3,7 +3,7 @@
 
 {% block content %}
     
-    <div class="Categoty">
+    <div class="Category">
         {% for tag in Categories %}
             <h2>
                 <a href="{% url 'tags' tag.name %}">{{ tag.name }}</a>

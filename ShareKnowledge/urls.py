@@ -23,6 +23,6 @@ urlpatterns = [
 
     path('<str:book_tag>/', views.tags, name='tags'),
 
-    # path('<str:book_tag>/<str:book_name>/', views.title, name='title'),
+    path('python/<str:book_title>/', views.title, name='python_title'),
 
 ]

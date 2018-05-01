@@ -6,7 +6,7 @@
     <div class="Book">
          {% for book in Books %}
              <h2>
-                 <a href="">{{ book.title }}</a>
+                 <a href="{% url 'python_title' book.title %}">{{ book.title }}</a>
              </h2>
          {% endfor %}
     </div>

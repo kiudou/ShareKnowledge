@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.shortcuts import redirect
 # Create your views here.
 
 from books.models import Book, Category
@@ -22,9 +22,10 @@ def tags(request, book_tag):
     return render(request, 'index.html', {'Books': Books})
 
 
-# def title(request, book_title):
-#     try:
-#         Book_single = Book.objects.get(title=book_title)
-#     except Book_single.DoesNotExist:
-#         raise Http404
-#     render(request, 'book_show.html', {'Book_single': Book_single})
+def title(request, book_title):
+    try:
+        Book_single = Book.objects.get(title=book_title)
+    except Book.DoesNotExist:
+        raise Http404
+    url = '/static/'+Book_single.title
+    return redirect(str(url))

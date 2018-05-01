@@ -1,0 +1,16 @@
+<!--index.html-->
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <div class="Book">
+         {% for book in Books %}
+             <h2>
+                 <a href="">{{ book.title }}</a>
+             </h2>
+         {% endfor %}
+    </div>
+    
+{% endblock %}
+
+

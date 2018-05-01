@@ -1,0 +1,14 @@
+<!--home.html-->
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <div class="Categoty">
+        {% for tag in Categories %}
+            <h2>
+                <a href="{% url 'tags' tag.name %}">{{ tag.name }}</a>
+            </h2> 
+        {% endfor %}
+    </div>
+    
+{% endblock %}

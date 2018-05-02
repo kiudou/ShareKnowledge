@@ -2,7 +2,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    
+
+
+    <!--
     <div class="Category">
         {% for tag in Categories %}
             <h2>
@@ -10,5 +12,68 @@
             </h2> 
         {% endfor %}
     </div>
+
+    -->
+
+
+
+    <div class="row" style="margin:50px 0 0 0;">
+        <div class="col-sm-6 col-md-3">
+            <div style="text-align:center;">
+                <img src="/static/picture_tags/python.jpeg" widht="150" height="150"
+                    alt="python">
+                    </div>
+            <div class="caption" style="text-align:center;">
+                <h2 style="text-align:center;">python</h2>
+                
+                <p>
+                <a href="https://www.python.org/" class="btn btn-primary" role="button">
+                    进入官网
+                </a>
+                <a href="/python/" class="btn btn-default" role="button">
+                    查看书籍
+                </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div style="text-align:center;">
+                <img src="/static/picture_tags/java.png" class="img-rounded" widht="150" height="150"
+                    alt="java">
+                    </div>
+            <div class="caption" style="text-align:center;">
+                <h2 style="text-align:center;">java</h2>
+                <p>
+                <a href="https://www.java.com/en/" class="btn btn-primary" role="button">
+                    进入官网
+                </a>
+                <a href="/java/" class="btn btn-default" role="button">
+                    查看书籍
+                </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div style="text-align:center;">
+                <img src="/static/picture_tags/linux.png" class="img-rounded" widht="150" height="150"
+                    alt="linux">
+                    </div>
+            <div class="caption" style="text-align:center;">
+                <h2 style="text-align:center;">linux</h2>
+                <p>
+                <a href="https://www.linux.org/" class="btn btn-primary" role="button">
+                    进入官网
+                </a>
+                <a href="/linux/" class="btn btn-default" role="button">
+                    查看书籍
+                </a>
+                </p>
+            </div>
+        </div>
+        
+        
+
     
+</div>
+
 {% endblock %}

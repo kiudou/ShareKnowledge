@@ -17,7 +17,7 @@
 
 <body>
     
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div>
             <form class="navbar-form navbar-left" role="search_tag">
                 <div class="form-group">
@@ -28,7 +28,7 @@
             <div>
                 <p class="navbar-text">ShareKnowledge</p>
             </div>
-            <form class="navbar-form navbar-right" role="search_title">
+            <form class="navbar-form navbar-right" role="search_title"  style="margin:7px 0 0 0;">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
                         </div>
@@ -36,7 +36,7 @@
             </form>
         </div>
     </nav>
-    
+    <div style="margin:80px 0 0 0;"></div>
     {% block content %}
         <div>it is not extending</div>
     {% endblock %}

@@ -5,12 +5,14 @@
     
     <div class="Book">
          {% for book in Books %}
-             <h2>
+         <div style="text-align:center;margin:20px 20px 20px 20px;">
+             <h3>
                  <a href="{% url 'python_title' book.title %}">{{ book.title }}</a>
-             </h2>
+             </h3>
+         </div>
          {% endfor %}
     </div>
-    
+
 {% endblock %}
 
 

@@ -27,5 +27,5 @@ def title(request, book_title):
         Book_single = Book.objects.get(title=book_title)
     except Book.DoesNotExist:
         raise Http404
-    url = '/static/'+Book_single.title
+    url = '/static/'+Book_single.tag+'/'+Book_single.title
     return redirect(str(url))

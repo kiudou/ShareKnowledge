@@ -1,13 +1,13 @@
-<!--index.html-->
+<!--show_tags.html-->
 {% extends "base.html" %}
 
 {% block content %}
     
-    <div class="Book">
-         {% for book in Books %}
+    <div class="Tags">
+         {% for tag in Categories %}
          <div style="text-align:center;margin:20px 20px 20px 20px;">
              <h3>
-                 <a href="{% url 'book_title' book.title %}">{{ book.title }}</a>
+                 <a href="{% url 'tags' tag.name %}">{{ tag.name }}</a>
              </h3>
          </div>
          {% endfor %}

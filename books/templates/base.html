@@ -8,9 +8,9 @@
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <title>{% block title  %} ShareKnowledge {% endblock %}</title>
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/scripts/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
     
 
 </head>
@@ -19,18 +19,18 @@
     
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div>
-            <form class="navbar-form navbar-left" role="search_tag">
+            <form action="/search_tag/" method="get" class="navbar-form navbar-left" role="search_tag">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input name="input_tag" type="text" class="form-control" placeholder="输入标签">
                         </div>
                 <button type="submit" class="btn btn-default">查询标签</button>
             </form>
             <div>
                 <p class="navbar-text">ShareKnowledge</p>
             </div>
-            <form class="navbar-form navbar-right" role="search_title"  style="margin:7px 0 0 0;">
+            <form action="/search_title/" method="get" class="navbar-form navbar-right"   style="margin:7px 0 0 0;">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input name="input_title" type="text" class="form-control" placeholder="输入书名">
                         </div>
                 <button type="submit" class="btn btn-default">查询书名</button>
             </form>

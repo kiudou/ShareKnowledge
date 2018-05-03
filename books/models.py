@@ -14,7 +14,7 @@ class Book(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=60) #标签名字
 
     def __str__(self):
         return self.name

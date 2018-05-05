@@ -1,3 +1,4 @@
+#coding: utf-8
 """ShareKnowledge URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -20,6 +21,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.home, name='home'), #主页
+
+    path('upload/', views.upload, name='upload'), #上传
+
+
+    # path('uploadFile/', views.upload_file, name='uploadFile'), #查找标签
+
+
+
+    path('upload/part/', views.upload_part, name='upload_part'), #分片
+
+    path('upload/success/', views.upload_success, name='upload_success'), #上传成功
+    
+
+
 
     path('search_title/', views.search_title, name='search_title'), #查找书名
 

@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('upload/', views.upload, name='upload'), #上传
 
+    path('submit_form/', views.submit_form, name='submit_form'), #提交表单
 
     # path('uploadFile/', views.upload_file, name='uploadFile'), #查找标签
 

@@ -1,6 +1,6 @@
 # ShareKnowledge #
 
-this project is providing plaform of sharing knowledge, there are a lot pdf of books to learner to read
+this project is providing platform of sharing knowledge, there are a lot of pdfs of books to learner to read
 
 ## 运行 ##
 

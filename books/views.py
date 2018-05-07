@@ -3,9 +3,12 @@ from django.shortcuts import redirect
 # Create your views here.
 
 from books.models import Book, Category
-import os
+import os, shutil
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+
+base_url = '/Users/qidong/GitHub/Django2.0/ShareKnowledge/books/static/'
+base_url_upload = base_url + 'upload/'
 
 #主页
 def home(request):
@@ -57,6 +60,33 @@ def search_tag(request):
     else:
         return redirect('/')
 
+#提交表单
+def submit_form(request):
+    if 'book_name' in request.GET and 'people_name' in request.GET \
+            and 'people_mail' in request.GET and 'book_tag' in request.GET:
+        bn = request.GET['book_name']
+        bt = request.GET['book_tag']
+        pn = request.GET['people_name']
+        pm = request.GET['people_mail']
+        book_single = Book.objects.filter(title=bn)
+        if book_single:
+            return render(request, 'book_exist.html')
+        old_file = base_url+'/upload/'+bn
+        new_file = base_url+bt+'/'
+        print(old_file, new_file)
+        try:
+            shutil.move(old_file, new_file)
+            Book.objects.create(title=bn, tag=bt, uploader=pn, uploader_mail=pm)
+        except BaseException:
+            return render(request, 'faile.html')
+        # if not Book.objects.get_or_create(title=bn, tag=bt, uploader=pn, uploader_mail=pm):
+        #     return render(request, 'book_exist.html')
+        #os.remove([x for x in os.listdir(base_url_upload) if os.path.isfile(x)])
+        shutil.rmtree(base_url_upload)
+        os.mkdir(base_url_upload)
+        return render(request, 'success.html')
+    else:
+        return render(request, 'faile.html')
 
 
 def upload(request):
@@ -72,7 +102,7 @@ def upload_part(request):
     filename = '%s%s' % (task, chunk)  # 构造该分片的唯一标识符
 
     upload_file = request.FILES['file']
-    destination = open(os.path.join("/Users/qidong/GitHub/Django2.0/ShareKnowledge/books/static/upload", filename),
+    destination = open(os.path.join(base_url_upload, filename),
                        'wb+')  # 打开特定的文件进行二进制的写操作
     for chunk in upload_file.chunks():  # 分块写入文件
         destination.write(chunk)
@@ -85,10 +115,10 @@ def upload_success(request):  # 按序读出分片内容，并写入新文件
     target_filename = request.GET.get('filename')  # 获取上传文件的文件名
     task = request.GET.get('task_id')  # 获取文件的唯一标识符
     chunk = 0  # 分片序号
-    with open('/Users/qidong/GitHub/Django2.0/ShareKnowledge/books/static/upload/%s' % target_filename, 'wb') as target_file:  # 创建新文件
+    with open(base_url_upload +'%s' % target_filename, 'wb') as target_file:  # 创建新文件
         while True:
             try:
-                filename = '/Users/qidong/GitHub/Django2.0/ShareKnowledge/books/static/upload/%s%d' % (task, chunk)
+                filename = base_url_upload + '%s%d' % (task, chunk)
                 source_file = open(filename, 'rb')  # 按序打开每个分片
                 target_file.write(source_file.read())  # 读取分片内容写入新文件
                 source_file.close()

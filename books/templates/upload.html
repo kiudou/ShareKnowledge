@@ -15,15 +15,56 @@
 
 
 <div style="margin:50px 0 0 50px;">
-    <div id="picker" style="float:left;">请选择文件</div>
+    <div id="picker" style="float:left;margin:10px 0 0 50px;" >请选择文件</div>
     <div id="progress" class="progress" style="width:500px;float:left;margin:10px 0 0 20px;">
         <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:0%;"></div>
     </div>
     <div style="clear:both;"></div>
 </div>
 
-
-
+<div style="margin:50px 0 0 50px;heigth:30px;width:700px;">
+    <form role="form" action="/submit_form/">
+        <div class="form-group" style="margin:50px 0 0 50px;">
+            <label for="firstname" class="col-sm-2 control-label">书籍名字</label>
+            <div class="col-sm-10">
+                <input name="book_name" type="text" class="form-control" id="firstname"
+                    placeholder="请输入书籍名字，与上传文件的名字相同，例如 爬虫.pdf,以pdf格式上传">
+                    </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="form-group" style="margin:50px 0 0 50px;">
+            <label for="lastname" class="col-sm-2 control-label">上传人的昵称</label>
+            <div class="col-sm-10">
+                <input name="people_name" type="text" class="form-control" id="lastname"
+                    placeholder="请输入专属自己的可爱昵称哦">
+                    </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="form-group" style="margin:50px 0 0 50px;">
+            <label for="lastname" class="col-sm-2 control-label">上传人的邮箱</label>
+            <div class="col-sm-10">
+                <input name="people_mail" type="text" class="form-control" id="lastname"
+                    placeholder="请输入自己的邮箱，方面与您联系呢">
+                    </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="form-group" style="margin:50px 0 0 50px;">
+            <label for="name">选择书籍的标签</label>
+            <select name="book_tag" class="form-control">
+                <option>python</option>
+                <option>java</option>
+                <option>linux</option>
+                <option>c++</option>
+            </select>
+            
+            
+        <div class="form-group" style="margin:50px 0 0 50px;">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">提交表单</button>
+            </div>
+        </div>
+    </form>
+</div>
 
 
 <script type="text/javascript">

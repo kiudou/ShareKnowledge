@@ -22,6 +22,8 @@ urlpatterns = [
 
     path('', views.home, name='home'), #主页
 
+    path('about_me/', views.about_me, name='about_me'), #上传
+
     path('upload/', views.upload, name='upload'), #上传
 
     path('submit_form/', views.submit_form, name='submit_form'), #提交表单

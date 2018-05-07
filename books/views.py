@@ -82,21 +82,23 @@ def submit_form(request):
         # if not Book.objects.get_or_create(title=bn, tag=bt, uploader=pn, uploader_mail=pm):
         #     return render(request, 'book_exist.html')
         #os.remove([x for x in os.listdir(base_url_upload) if os.path.isfile(x)])
-        shutil.rmtree(base_url_upload)
-        os.mkdir(base_url_upload)
+        shutil.rmtree(base_url_upload)  # 移动文件
+        os.mkdir(base_url_upload)  #删除目录下的所有文件
         return render(request, 'success.html')
     else:
         return render(request, 'faile.html')
 
-
+# 上传书籍
 def upload(request):
     return render(request, 'upload.html')
 
-
+# 项目简介
+def about_me(request):
+    return render(request, 'about_me.html')
 
 
 @csrf_exempt
-def upload_part(request):
+def upload_part(request):  # 分片上传
     task = request.POST.get('task_id')  # 获取文件的唯一标识符
     chunk = request.POST.get('chunk', 0)  # 获取该分片在所有分片中的序号
     filename = '%s%s' % (task, chunk)  # 构造该分片的唯一标识符

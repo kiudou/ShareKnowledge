@@ -1,0 +1,43 @@
+<!--index.html-->
+{% extends "base.html" %}
+
+{% block content %}
+    
+<div>
+    <div style="text-align:center;">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#introduce" data-toggle="tab">
+                    项目简介
+                </a>
+            </li>
+            <li><a href="#application" data-toggle="tab">感谢</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="introduce">
+                <h1>ShareKnowledge</h1>
+                <div style="margin:80px 0 0 0;">
+                    <h3>该项目主要是为了让那些热爱互联网，热爱IT的人能共享书籍，让更多的人获取到知识，增强自身技能</h3>
+                </div>
+                <div style="margin:80px 0 0 0;">
+                    <h3>该项目的源代码：<a href="https://github.com/kiudou/ShareKnowledge">https://github.com/kiudou/ShareKnowledge</a></h3>
+                    <h3>不如顺手star一下，您的支持，才会让我有动力做的更好</h3>
+                </div>
+                <div style="margin:80px 0 0 0;">
+                    <h3>该平台并非是营利性平台，只为广大互联网爱好者提供知识共享，若书籍有侵权之处，望能及时反应</h3>
+                </div>
+                <div style="margin:100px 0 0 0;color:blue">
+                    联系方式: <a href="mailto:"qidong120@hotmail.com">qidong120@hotmail.com</a>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="application">
+                <div style="margin:80px 0 0 0;"><h3>感谢各框架的提供商，感谢各位书籍上传者</h3></div>
+                <div style="margin:80px 0 0 0;"><h3>感谢网上的各种教程博客，还有可爱学长的项目</h3></div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+{% endblock %}
+
+
